@@ -13,7 +13,7 @@ const ConditionField = ({ value, additionalData, setAdditionalData }) => {
   // Reset Values if dish type changes
   useEffect(() => {
     setAdditionalData(inputCondition);
-  }, [value]);
+  }, [value]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
