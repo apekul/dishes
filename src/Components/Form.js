@@ -20,24 +20,23 @@ const Form = () => {
         delete obj[key];
       }
     }
-    console.log({ ...data, ...obj });
-    // var myHeaders = new Headers();
-    // myHeaders.append("Content-Type", "application/json");
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-    // var requestOptions = {
-    //   method: "POST",
-    //   headers: myHeaders,
-    //   body: JSON.stringify({ ...data, ...obj }),
-    //   redirect: "follow",
-    // };
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: JSON.stringify({ ...data, ...obj }),
+      redirect: "follow",
+    };
 
-    // fetch(
-    //   "https://umzzcc503l.execute-api.us-west-2.amazonaws.com/dishes/",
-    //   requestOptions
-    // )
-    //   .then((response) => response.json())
-    //   .then((result) => console.log(result))
-    //   .catch((error) => console.log("error", error));
+    fetch(
+      "https://umzzcc503l.execute-api.us-west-2.amazonaws.com/dishes/",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
   };
 
   // Update values in data variable
